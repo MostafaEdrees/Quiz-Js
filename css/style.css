@@ -1,0 +1,91 @@
+
+
+/* tap */
+.tap-nav{
+     background-color: rgb(240, 227, 227);
+     width: 90px;
+     color: black;
+}
+.big-tap{
+     width: 250px;
+     position: fixed;
+     z-index: 736485453;
+height: 100vh;
+color: white;
+background-color: black;
+
+}
+.submit{
+     
+     margin: 10px 30px;
+}
+.inforamtion{
+background-color: transparent;
+border: transparent;
+border-bottom: solid 2px gray ;
+color: white;
+font-size: 20px;
+
+}
+.fade{
+     color: white;
+}
+.tap li{
+     list-style: none;
+     color: white;
+     font-size:18px;
+}
+i ,li{
+     cursor: pointer;
+}
+
+/* first section  */
+
+
+
+ 
+ .about-img {
+     width: 100%;
+     position: relative;
+     border-radius: 7px;
+ }
+ 
+ .layer {
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     background-color: rgba(211,211,211, 0.7);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     top: 100%;
+     transition: all 1s;
+     opacity: 1;
+     flex-direction: column;
+     color: black;
+     text-align: center;
+     padding: 10px;
+  
+ }
+ 
+.bor img{
+     border-radius: 7px;
+}
+ 
+ .img-layer-container {
+     position: relative;
+     overflow: hidden;
+     border-radius: 7px;
+ }
+ 
+ .img-layer {
+     border-radius: 7px;
+     top: 20px;
+     left: 20px;
+ }
+ 
+ .img-layer:hover .layer {
+     top: 0;
+     opacity: 1;
+ }
+
