@@ -8,16 +8,16 @@
 </head>
 
 <body>
-  <section>
+    <section>
         <div id="big-tap" class=" big-tap  d-flex bg-dark ">
             <div id="tap" class="tap  bg-dark ">
-                <ul  class="m-3 ">
-                    <li class=" fade1 ">  Now playing</l>
-                    <li class="p-3 fade2">Popular</l>
-                    <li class="p-3 fade3">Top Rated</l>
-                    <li class="p-3 fade4">Trending</l>
-                    <li class="p-3 fade5">Upcoming</l>
-                <li class="p-2 fade6">Contact Us</l>
+                <ul class=" text-center">
+                    <li id="fade1" class="  fade1 my-4 ">playing</li>
+                    <li id="fade2" class="  fade2 mb-4 py-2 ">Popular</l>
+                    <li id="fade3" class="fade3 mb-4 py-2">Top</l>
+                    <li id="fade4" class="fade4 mb-4 py-2">Trend</l>
+                    <li id="fade5" class=" fade5 mb-4 py-2">Upcoming</l>
+                    <li id="fade6" class=" fade6 mb-4 " >Contact Us</l>
                 </ul>
                 <div class="icon  text-center pt-5">
                     <i class="fab fa-facebook pt-5"></i>
@@ -32,29 +32,34 @@
                 <div class="">
                     <img class="w-50 " src="./images/logo.png" alt="">
                 </div>
-                 <i id="close" class="fas fa-times  fa-globe "></i>
+                <i id="close" class="fas fa-times  fa-globe "></i>
                 <div class="d-flex flex-column justify-content-between ">
                     <i class="fas fa-globe m-4"></i>
                     <i id="share" class="fas fa-share-alt"></i>
                 </div>
             </div>
         </div>
-    </section> 
-
+    </section>
 
 
     <section class="bg-dark">
-        <div class="input d-flex  p-5 justify-content-around ">
-            <input id="searh1" placeholder="get movies by word" class="form-control w-25  " type="text ">
-            <input id="searh2" placeholder="Search" class="form-control w-25 " type="text">
+        <div class="container">
+<div class="row   ms-5 p-4 ">
+
+    <div class="col-md-5 m-2">
+        <input  onkeydown="search3()" id="searh1" placeholder="get movies by word" class=" inforamtion  form-control 
+        " type="text ">
+    </div>
+    <div class="col-md-5 m-2">
+        <input onkeydown="search()" id="searh2" placeholder="Search All Movies" class=" inforamtion  form-control  "
+        type="text">
+    </div>
+</div>
+
+    
+            <div class="row" id="demo">
+            </div>
         </div>
-   
-<div class="container">
-<div class="row" id="demo">
-</div>
-</div>
-
-
         <div class="contact ">
             <div class="container">
                 <div class="row text-center">
@@ -75,7 +80,8 @@
                             <div class="col-md-5">
                                 <div class="form-inputs">
                                     <div class="input-gp mb-3">
-                                        <input id="productName2" class="inforamtion  form-control mb-2" placeholder="  Enter Email">
+                                        <input id="productName2" class="inforamtion  form-control mb-2"
+                                            placeholder="  Enter Email">
                                         <div id="nameAlert2" class="alert alert-danger d-none">
                                             Enter valid Email</div>
                                     </div>
@@ -84,7 +90,8 @@
                             <div class="col-md-5">
                                 <div class="form-inputs">
                                     <div class="input-gp mb-3">
-                                        <input id="productName3" class=" inforamtion form-control mb-2" placeholder="  Enter Phone">
+                                        <input id="productName3" class=" inforamtion form-control mb-2"
+                                            placeholder="  Enter Phone">
                                         <div id="nameAlert3" class="alert alert-danger d-none">
                                             Enter Valid Phone from 11 Num</div>
                                     </div>
@@ -93,7 +100,8 @@
                             <div class="col-md-5">
                                 <div class="form-inputs ">
                                     <div class="input-gp mb-3">
-                                        <input id="productName4" class=" inforamtion form-control mb-2" placeholder="Enter Age">
+                                        <input id="productName4" class=" inforamtion form-control mb-2"
+                                            placeholder="Enter Age">
                                         <div id="nameAlert4" class="alert alert-danger d-none">
                                             entre valid Age</div>
                                     </div>
@@ -102,8 +110,8 @@
                             <div class="col-md-5">
                                 <div class="form-inputs">
                                     <div class="input-gp mb-3">
-                                        <input id="productName5" class=" inforamtion form-control mb-2 "
-                                            placeholder="Enter password">
+                                        <input type="password" id="productName5"
+                                            class=" inforamtion form-control mb-2  " placeholder="Enter password">
                                         <div id="nameAlert5" class="alert alert-danger d-none">
                                             entre valid password *Minimum eight characters, at least one letter and one
                                             number:*</div>
@@ -113,7 +121,7 @@
                             <div class="col-md-5  ">
                                 <div class="form-inputs">
                                     <div class="input-gp mb-3">
-                                        <input id="productName6" class=" inforamtion form-control mb-2 "
+                                        <input type="password" id="productName6" class=" inforamtion form-control mb-2 "
                                             placeholder="Enter Repassword">
                                         <div id="nameAlert6" class="alert alert-danger d-none">
                                             enter valid password </div>
@@ -121,105 +129,18 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-   
                                 <button onclick="fun(),fun2(),fun3(),fun4(),fun5(),fun6()" disabled id="submitBtn"
                                     class=" px-4 btn btn-primary">Submit</button>
-
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-                    <!-- <div class="col-md-6">
-    <div class="input  ms-5 p-3 justify-content-around  bg-light">
-        <input  placeholder="get movies by word" class=" is-valid w-75  Repassword inforamtion  " type="text ">
-        <p class="alert alert-danger w-75 "  > entre valid Repassword</p>
-    </div>
-</div>
-
-<div class="col-md-6 ">
-    <div class="input ms-5 p-3 justify-content-around ">
-        <input  placeholder="get movies by word" class="form-control w-75  Repassword inforamtion  " type="text ">
-        <p class="alert alert-danger w-75 "  > entre valid Repassword</p>
-    </div>
-</div>
-<div class="col-md-6">
-    <div class="input ms-5  p-3 justify-content-around ">
-        <input  placeholder="get movies by word" class="form-control w-75  Repassword inforamtion  " type="text ">
-        <p class="alert alert-danger  w-75"  > entre valid Repassword</p>
-    </div>
-</div>
-<div class="col-md-6">
-    <div class="input  ms-5 p-3 justify-content-around ">
-        <input  placeholder="get movies by word" class="form-control w-75  Repassword inforamtion  " type="text ">
-        <p class="alert alert-danger  w-75"  > entre valid Repassword</p>
-    </div>
-</div>
-<div class="col-md-6 ">
-    <div class="input  ms-5 p-3 justify-content-around ">
-        <input  placeholder="get movies by word" class="form-control w-75  Repassword inforamtion  " type="text ">
-        <p class="alert alert-danger w-75 "  > entre valid Repassword</p>
-    </div>
-</div>
-<div class="col-md-12 ms-5 text-start ">
-  
-        <button disabled  id="submitBtn" onclick="valid()" class="btn btn-danger submit">submit</button>   
-   
-</div> -->
-
-
-
-
-
-
-
-
-
-
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
-
     </section>
+
+
+
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/main.js"></script>
 </body>

@@ -1,6 +1,112 @@
 
-// tap
+ $(document).ready(function() {
+    search3()
+  });
+// searsh
+searchText = document.getElementById("searh2");
+let searh1=document.getElementById('searh1')
+        let moves2=[];
+async function search3(){
 
+            let responce =await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=eba8b9a7199efdcb0ca1f96879b83c44&fbclid=IwAR32Px4_3ZTHYF-tjdSOdkN82Esd5XSCl7c0ueF0LR8urOnlJBZ4TJJdf_k`)
+            let finalresulat3 =await responce.json()
+            let moves3=finalresulat3.results;
+            let newProduct = "";
+            
+            for (var i = 0; i < moves3.length; i++) {
+            if(moves3[i].original_title.toLowerCase().includes(searh1.value.toLowerCase()) )
+            {
+            newProduct += `
+            <div class="col-md-4 mb-3 bor">
+            <div class="about-img ">
+             <div class="img-layer">
+                 <div class="img-layer-container">
+                     <img class="w-100" src="https://image.tmdb.org/t/p/w500${moves3[i].poster_path}" alt="" srcset="">
+                     <div class="layer ">
+                 <h3>${moves3[i].title}</h3>
+                          <p>${moves3[i].overview}</p>
+                          <p>Rate:${moves3[i].vote_average}</p>
+                          <p>${moves3[i].release_date}</p>
+                     </div>
+                 </div>
+             </div>
+            </div> 
+            </div> 
+            `;
+            
+            }
+            
+            }    
+            
+            document.getElementById("demo").innerHTML = newProduct;
+}       
+searchText.onkeyup = async function search(){
+        
+        //   console.log()
+ let responce =await fetch(`https://api.themoviedb.org/3/search/movie?api_key=eba8b9a7199efdcb0ca1f96879b83c44&query=${searchText.value}`)
+
+ let finalresulat2 =await responce.json()
+ let moves2=finalresulat2.results;
+ 
+  let newProduct = "";
+
+   for (var i = 0; i < moves2.length; i++) {
+
+    if(moves2[i].original_title.toLowerCase().includes(searchText.value.toLowerCase()) )
+    {
+    newProduct += `
+    <div class="col-md-4 mb-3 bor">
+    <div class="about-img ">
+       <div class="img-layer">
+           <div class="img-layer-container">
+               <img class="w-100" src="https://image.tmdb.org/t/p/w500${moves2[i].poster_path}" alt="" srcset="">
+               <div class="layer ">
+           <h3>${moves2[i].title}</h3>
+                    <p>${moves2[i].overview}</p>
+                    <p>Rate:${moves2[i].vote_average}</p>
+                    <p>${moves2[i].release_date}</p>
+               </div>
+           </div>
+       </div>
+    </div> 
+    </div> 
+    `;
+
+}
+
+ }    
+
+    document.getElementById("demo").innerHTML = newProduct;
+}
+async function search4(term){
+
+    let responce =await fetch(`https://api.themoviedb.org/3/search/movie?api_key=eba8b9a7199efdcb0ca1f96879b83c44&query=${term}`)
+    let finalresulat4 =await responce.json()
+    let moves4=finalresulat4.results;
+    let newProduct = "";
+
+    for (var i = 0; i < moves4.length; i++) {
+    newProduct += `
+    <div class="col-md-4 mb-3 bor">
+    <div class="about-img ">
+     <div class="img-layer">
+         <div class="img-layer-container">
+             <img class="w-100" src="https://image.tmdb.org/t/p/w500${moves4[i].poster_path}" alt="" srcset="">
+             <div class="layer ">
+         <h3>${moves4[i].title}</h3>
+                  <p>${moves4[i].overview}</p>
+                  <p>Rate:${moves4[i].vote_average}</p>
+                  <p>${moves4[i].release_date}</p>
+             </div>
+         </div>
+     </div>
+    </div> 
+    </div> 
+    `;
+    }    
+    document.getElementById("demo").innerHTML = newProduct;
+    }
+    
 let tapWidthBox=$('#tap').outerWidth();
 $( "#big-tap" ).css({left:`-${tapWidthBox}`})
 
@@ -157,7 +263,7 @@ function fun3 (){
 
  
      }
-// fun6(productName5.value)
+
  }
 
 
@@ -192,21 +298,19 @@ submitBtn.removeAttribute("disabled");
 
 // function to get data from API
 
-let searh1=document.getElementById('searh1')
-let searh2=document.getElementById('searh2')
-let moves=[];
- async function getMoves(currenValue){
+
+
+
+ async function getMoves(){
    
 let responce =await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=eba8b9a7199efdcb0ca1f96879b83c44&fbclid=IwAR32Px4_3ZTHYF-tjdSOdkN82Esd5XSCl7c0ueF0LR8urOnlJBZ4TJJdf_k
 `)
 let finalresulat =await responce.json()
 let moves=finalresulat.results;
 displayMovies(moves)
+}
 
-let a=moves[2].currenValue
-console.log(currenValue)}
 function displayMovies(moves){
-    
 let cartouna=``
 for(i=0;i<moves.length;i++)
 
@@ -228,31 +332,64 @@ for(i=0;i<moves.length;i++)
 </div> 
 `
 }
-document.getElementById('demo').innerHTML=cartouna
+document.getElementById('demo').innerHTML=cartouna;
+
 }
+
+
   getMoves()
 
 
-//   search
 
-searh1.addEventListener("keyup", function() {
-     currenValue = searh1.value;
-     searchProudct(currenValue)});
- function searchProudct(currenValue) {
-     let prouductContainer=['a','q','a','A','x','z','r','u','h']
-     for (i = 0; i < prouductContainer.length; i++)
-      {
-console.log(prouductContainer)
-//        if (
-//          prouductContainer[i].toLowerCase().includes(term.toLowerCase()) ==true)
-//         {
-//     console.log('yes')
-//        }
-//        else{
-//           console.log('no')   
-//        }
 
-     }
-     // document.getElementById("displayProudct").innerHTML = cartouna;
-   }
- 
+
+  document.getElementById("fade1").addEventListener("click", function() {
+   
+    let term= document.getElementById("fade1").innerHTML ;
+    search4(term)
+     
+   });
+
+   document.getElementById("fade2").addEventListener("click", function() {
+   
+    let term2= document.getElementById("fade2").innerHTML ;
+    search4(term2)
+     
+   });
+   
+document.getElementById("fade3").addEventListener("click", function() {
+   
+    let term= document.getElementById("fade3").innerHTML ;
+    search4(term)
+     
+   });
+   
+document.getElementById("fade4").addEventListener("click", function() {
+   
+    let term= document.getElementById("fade4").innerHTML ;
+    search4(term)
+     
+   });
+   
+document.getElementById("fade5").addEventListener("click", function() {
+   
+    let term= document.getElementById("fade5").innerHTML ;
+    search4(term)
+     
+   });
+   document.getElementById("fade6").addEventListener("click", function() {
+   
+    let term= document.getElementById("fade6").innerHTML ;
+    search4(term)
+     
+   });
+
+
+
+
+
+
+
+
+
+

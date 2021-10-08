@@ -1,8 +1,10 @@
 
-
+body{
+     background: #000 !important;
+}
 /* tap */
 .tap-nav{
-     background-color: rgb(240, 227, 227);
+     background-color: white;
      width: 90px;
      color: black;
 }
@@ -42,7 +44,9 @@ i ,li{
 /* first section  */
 
 
-
+i:hover{
+color:rgb(177, 10, 10);
+}
  
  .about-img {
      width: 100%;
